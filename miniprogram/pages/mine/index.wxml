@@ -1,3 +1,7 @@
 <view>
-  这里是index啦啦啦啦
+  <view>用户是否已登录: {{ isLogin }}</view>
+  <view>用户昵称： {{ userInfo.nickName }} - {{userInfo.avatarUrl}}</view>
+  <image src="{{userInfo.avatarUrl}}" alt="用户头像" srcset="" />
+  <button type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
+  <!-- <button type="primary" bindtap="handleCheck">检查是否已登录</button> -->
 </view>

@@ -1,4 +1,4 @@
-import http from '../utils/request.js';
+import http from '../../utils/request.js';
 export default {
   // 获取菜谱分类
   getRecipeClassify: () => {

@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/mine/index",
+    "pages/index/index",
+    
     "pages/collect/index",
     "pages/classify/index"
   ],

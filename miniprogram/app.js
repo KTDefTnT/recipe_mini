@@ -1,6 +1,7 @@
 //app.js
+import userAPI from './core/api/user.api';
 App({
-  onLaunch: function () {
+  onLaunch: async function () {
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -13,7 +14,17 @@ App({
         traceUser: true,
       })
     }
-
+    const registerInfo = await userAPI.isRegister();
+    if (registerInfo.isRegister) {
+      wx.setStorage({
+        key: 'userInfo',
+        data: registerInfo.userInfo
+      });
+      wx.setStorage({
+        key: 'isLogin',
+        data: true
+      })
+    }
     this.globalData = {}
   }
 })
