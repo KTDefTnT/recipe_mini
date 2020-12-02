@@ -1,7 +1,43 @@
 <view>
-  <view>用户是否已登录: {{ isLogin }}</view>
-  <view>用户昵称： {{ userInfo.nickName }} - {{userInfo.avatarUrl}}</view>
-  <image src="{{userInfo.avatarUrl}}" alt="用户头像" srcset="" />
-  <button type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
+  <view wx:if="{{ isLogin }}" class="isRegister">
+    <view class="header">
+      <image src="{{userInfo.avatarUrl}}" alt="用户头像" class="header__img" />
+      <view class="header__nickName">{{ userInfo.nickName }}</view>
+    </view>
+    <view class="content-container">
+      <view class="collect">
+        <view class="collect-item">
+          <view class="collect-item__icon iconfont icon-like"></view>
+          <view class="collect-item__text">点赞</view>
+        </view>
+        <view class="collect-item">
+          <view class="collect-item__icon iconfont icon-collect"></view>
+          <view class="collet-item__text">收藏</view>
+        </view>
+      </view>
+      <view class="mine-list">
+        <view class="list-item">
+          <text class="list-item__icon iconfont icon-aboutUs"></text>
+          <text class="list-item__text">关于我们</text>
+          <text class="iconfont icon-right"></text>
+        </view>
+        <view class="list-item">
+          <text class="list-item__icon iconfont icon-message"></text>
+          <text class="list-item__text">我的消息</text>
+          <text class="iconfont icon-right"></text>
+        </view>
+        <view class="list-item">
+          <text class="list-item__icon iconfont icon-kefu"></text>
+          <text class="list-item__text">联系客服</text>
+          <text class="iconfont icon-right"></text>
+        </view>
+      </view>
+    </view>
+    
+  </view>
+  <view wx:else>
+    <button type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
+  </view>
+  
   <!-- <button type="primary" bindtap="handleCheck">检查是否已登录</button> -->
 </view>

@@ -1,0 +1,12 @@
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  .search-bar__form {
+    position: relative;
+    flex: 1;
+  }
+  .search-bar__cancel {
+    margin-left: 10px;
+  }
+}

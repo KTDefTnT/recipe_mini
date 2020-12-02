@@ -1,2 +1,8 @@
 <!--miniprogram/pages/classify/index.wxml-->
-<text>miniprogram/pages/classify/index.wxml</text>
+<view class="classify-container">
+  <view class="classify-list">
+    <view class="classify-item" wx:for="{{ classifyList }}" wx:key="index" wx:item="item" data-classid="{{ item.classid }}" bindtap="handleViewClassify">
+      {{ item.name }}
+    </view>
+  </view>
+</view>
