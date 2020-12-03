@@ -1,0 +1,13 @@
+.classify-list {
+  .classify-item {
+    display: flex;
+    flex-direction: row;
+    margin: 0rpx 10rpx 20rpx;
+    .classify-item__img {
+      margin-right: 20rpx;
+      width: 140rpx;
+      height: 140rpx;
+      border-radius: 20rpx;
+    }
+  }
+}

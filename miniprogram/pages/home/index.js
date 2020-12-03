@@ -12,5 +12,10 @@ Page({
       });
     }
     console.log(respData)
+  },
+  handleClearSearch () {
+    this.setData({
+      classifyList: []
+    });
   }
 });

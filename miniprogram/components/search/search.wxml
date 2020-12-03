@@ -2,7 +2,7 @@
 <view class="search-bar">
   <view class="search-bar__form">
     <view class="search-bar__box">
-      <icon class="search-bar__search" type="search" color="#B2B2B2" size="14" />
+      <icon class="search-bar__search" type="search" color="#B2B2B2" size="20" />
       <input
         type="text"
         value="{{ inputValue }}"
@@ -27,9 +27,9 @@
         bindconfirm="onConfirm"
         bindkeyboardheightchange="onKeyBoardHeightChange"
       />
+      <icon wx:if="{{ inputFocus || inputValue }}" class="search-bar__clear" type="clear" color="#B2B2B2" size="20" bindtap="onClear" />
     </view>
   </view>
-  <view class="search-bar__cancel" bindtap="onCancel">{{ cancelText }}</view>
-  
+  <view wx:if="{{ inputFocus || inputValue }}" class="search-bar__cancel" bindtap="onCancel">{{ cancelText }}</view>
 </view>
 

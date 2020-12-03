@@ -3,10 +3,10 @@ const rename = require('gulp-rename'); // 重命名插件
 const sass = require('gulp-sass');
  
 function handleSass() {
-  return gulp.src('miniprogram/**/*.scss')            // 读取mp目录下的所有 .scss 文件
+  return gulp.src('miniprogram/**/*.scss')            // 读取miniprogram目录下的所有 .scss 文件
     .pipe(sass().on('error', sass.logError)) // 使用 gulp-sass 插件转化
     .pipe(rename({ extname: '.wxss' }))      // 将拓展名修改为 .wxss
-    .pipe(gulp.dest('miniprogram'))                   // 导出到 mp 文件夹下
+    .pipe(gulp.dest('miniprogram'))                   // 导出到 miniprogram 文件夹下
 }
  
 // watch 文件监听

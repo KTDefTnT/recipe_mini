@@ -5,6 +5,14 @@ Component({
    */
   properties: {
     placeholder: String,
+    defaultValue: {
+      type: String,
+      value: '',
+    },
+    value: {
+      type: String,
+      value: '',
+    },
     placeholderStyle: {
       type: [String, Object],
       value: ''
@@ -67,7 +75,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    inputValue: ''
+    inputValue: '',
+    inputFocus: false
   },
 
   /**
@@ -75,12 +84,21 @@ Component({
    */
   methods: {
     onChange (e) {
+      this.setData({
+        inputValue: e.detail.value
+      });
       this.triggerEvent('change', e.detail);
     },
     onFocus (e) {
+      this.setData({
+        inputFocus: true
+      });
       this.triggerEvent('focus', e.detail);
     },
     onBlur (e) {
+      this.setData({
+        inputFocus: false
+      });
       this.triggerEvent('blur', e.detail);
     },
     onConfirm (e) {
@@ -90,7 +108,19 @@ Component({
       this.triggerEvent('keyBoardHeightChange', e.detail);
     },
     onCancel (e) {
-      this.triggerEvent('cancel', e);
+      this.setData({
+        inputValue: '',
+        inputFocus: false
+      });
+      this.triggerEvent('cancel', { value: this.data.inputValue });
+    },
+    onClear () {
+      console.log('clear');
+      this.setData({
+        inputValue: '',
+        inputFocus: true
+      });
+      this.triggerEvent('clear', { value: '' });
     }
   }
 })
