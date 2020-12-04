@@ -1,0 +1,36 @@
+.classify-list {
+  margin-top: 40rpx; }
+  .classify-list .classify-item {
+    display: flex;
+    flex-direction: row;
+    margin: 0rpx 10rpx 20rpx; }
+    .classify-list .classify-item .classify-item__img {
+      margin-right: 20rpx;
+      flex-basis: 140rpx;
+      height: 140rpx;
+      border-radius: 20rpx; }
+    .classify-list .classify-item .classify-item__content {
+      flex: 1;
+      padding-right: 5rpx; }
+      .classify-list .classify-item .classify-item__content .classify-item__name {
+        padding: 0rpx 0rpx 8rpx;
+        font-size: 32rpx;
+        font-weight: bold; }
+      .classify-list .classify-item .classify-item__content .classify-item__tag {
+        display: -webkit-box;
+        padding: 5rpx 0rpx;
+        font-size: 24rpx;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical; }
+      .classify-list .classify-item .classify-item__content .lassify-item__desc {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rpx 0rpx;
+        font-size: 20rpx;
+        color: #222; }
+        .classify-list .classify-item .classify-item__content .lassify-item__desc .classify-item__time, .classify-list .classify-item .classify-item__content .lassify-item__desc .classify-item__people {
+          flex: 1; }
+          .classify-list .classify-item .classify-item__content .lassify-item__desc .classify-item__time text, .classify-list .classify-item .classify-item__content .lassify-item__desc .classify-item__people text {
+            color: #9B9B9B; }

@@ -1,0 +1,18 @@
+<view class="search-container">
+  <view class="classify-search">
+    <searchBar placeholder="请输入菜谱" focus="{{ focus }}" autoFocus="{{ focus }}" bindconfirm="handleSearchRecipe" bindcancel="handleClearSearch" bindblur="handleClearSearch"></searchBar>
+  </view>
+  <view wx:if="classifyList.length > 0" class="classify-list">
+    <view class="classify-item" wx:for="{{ classifyList }}" wx:key="index" wx:item="item" data-classid="{{ item.classid }}" bindtap="handleViewClassify">
+      <image class="classify-item__img" src="{{ item.pic }}"></image>
+      <view class="classify-item__content">
+        <view class="classify-item__name">{{ item.name }}</view>
+        <view class="classify-item__tag">功效：{{ item.tag }}</view>
+        <view class="lassify-item__desc">
+          <view class="classify-item__time"><text>烹饪时长：</text> {{ item.cookingtime }}</view>
+          <view class="classify-item__people"><text>用餐人数：</text> {{ item.peoplenum }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

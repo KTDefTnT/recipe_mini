@@ -1,5 +1,5 @@
 <!--components/search/search.wxml-->
-<view class="search-bar">
+<view class="search-bar class-name">
   <view class="search-bar__form">
     <view class="search-bar__box">
       <icon class="search-bar__search" type="search" color="#B2B2B2" size="20" />

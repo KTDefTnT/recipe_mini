@@ -1,5 +1,5 @@
 {
-  "navigationBarTxtTitle": "首页",
+  "navigationBarTitleText": "搜索",
   "usingComponents": {
     "searchBar": "../../components/search/search"
   }

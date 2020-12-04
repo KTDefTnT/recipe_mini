@@ -11,13 +11,14 @@
       position: relative;
       .search-bar__search {
         position: absolute;
-        left: 4rpx;
-        bottom: 12rpx;
+        left: 10rpx;
+        bottom: 11rpx;
       }
       .search-bar__input {
-        padding: 8rpx 0rpx 8rpx 38rpx;
+        padding: 8rpx 0rpx 8rpx 45rpx;
+        background: #Fff;
         border: 1rpx solid #CDD5E3;
-        border-radius: 2rpx;
+        border-radius: 10rpx;
       }
       .search-bar__clear {
         position: absolute;
@@ -30,5 +31,6 @@
   }
   .search-bar__cancel {
     margin-left: 20rpx;
+    color: #ffc44f;
   }
 }

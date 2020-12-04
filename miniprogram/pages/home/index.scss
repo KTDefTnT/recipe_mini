@@ -1,13 +1,46 @@
-.classify-list {
-  .classify-item {
+.home-container {
+  position: relative;
+  width: 100%;
+  .classify-search {
+    width: 100%;
+    height: 300rpx;
+    background-color: #ffc44f;
+    border-radius: 0rpx 0rpx 100rpx 100rpx;
+    .search-bar {
+      background-color: #ffc44f;
+    }
+  }
+  .banner {
+    position: absolute;
+    top: 120rpx;
+    left: 0px;
+    padding: 0rpx 20rpx;
+    width: 100%;
+    height: 250rpx;
+  }
+  .tab-list {
     display: flex;
     flex-direction: row;
-    margin: 0rpx 10rpx 20rpx;
-    .classify-item__img {
-      margin-right: 20rpx;
-      width: 140rpx;
-      height: 140rpx;
-      border-radius: 20rpx;
+    flex-wrap: wrap;
+    margin-top: 80rpx;
+    padding: 20rpx 20rpx 0rpx;
+    width: 100%;
+    border: 1px soild red;
+    border-radius: 10rpx;
+    box-sizing: 0px 0px 2rpx 4rpx #ffc44f;
+    .tab-item {
+      flex-basis: 25%;
+      text-align: center;
+      padding-bottom: 20rpx;
+      .tab-item__img {
+        width: 100rpx;
+        height: 100rpx;
+      }
+      .tab-item__title {
+        font-size: 24rpx;
+        font-weight: 500;
+        color: #222;
+      }
     }
   }
 }

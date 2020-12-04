@@ -1,5 +1,6 @@
 // components/search/search.js
 Component({
+  externalClasses: ['class-name'],
   /**
    * 组件的属性列表
    */
@@ -37,7 +38,7 @@ Component({
       type: Boolean,
       value: false
     },
-    foucus: {
+    focus: {
       type: Boolean,
       value: false
     },

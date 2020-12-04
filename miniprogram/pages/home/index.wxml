@@ -1,15 +1,26 @@
+<!--miniprogram/pages/home/index.wxml-->
 <view class="home-container">
   <view class="classify-search">
-    <searchBar placeholder="请输入菜谱" bindconfirm="handleSearchRecipe" bindcancel="handleClearSearch"></searchBar>
+    <searchBar class-name="search-bar" placeholder="请输入菜谱" bindfocus="handleFocus"></searchBar>
   </view>
-  <view wx:if="classifyList.length > 0" class="classify-list">
-    <view class="classify-item" wx:for="{{ classifyList }}" wx:key="index" wx:item="item" data-classid="{{ item.classid }}" bindtap="handleViewClassify">
-      <image class="classify-item__img" src="{{ item.pic }}"></image>
-      <view class="classify-item__content">
-        <view class="classify-item__name">{{ item.name }}</view>
-        <view class="classify-item__time">烹饪时长： {{ item.cookingtime }}</view>
-        <view class="classify-item__people">用餐人数：{{ item.peoplenum }}</view>
-      </view>
+  <image class="banner" src="../../images/banner_bg.png"></image>
+  <view class="tab-list">
+    <view class="tab-item" bindtap="handleChooseImg">
+      <image class="tab-item__img" src="../../images/recipe_search.png"></image>
+      <view class="tab-item__title">扫图识菜</view>
+    </view>
+    <view class="tab-item">
+      <image class="tab-item__img" src="../../images/recipe_search.png"></image>
+      <view class="tab-item__title">早餐</view>
+    </view>
+    <view class="tab-item">
+      <image class="tab-item__img" src="../../images/recipe_search.png"></image>
+      <view class="tab-item__title">午餐</view>
+    </view>
+    <view class="tab-item">
+      <image class="tab-item__img" src="../../images/recipe_search.png"></image>
+      <view class="tab-item__title">晚餐</view>
     </view>
   </view>
 </view>
+

@@ -1,1 +1,4 @@
-@import "iconfont.wxss"
+@import "iconfont.wxss";
+view, text, image {
+  box-sizing: border-box;
+}
