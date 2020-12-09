@@ -1,6 +1,6 @@
 <view class="search-container">
   <view class="classify-search">
-    <searchBar placeholder="请输入菜谱" focus="{{ focus }}" autoFocus="{{ focus }}" bindconfirm="handleSearchRecipe" bindcancel="handleClearSearch" bindblur="handleClearSearch"></searchBar>
+    <searchBar placeholder="请输入菜谱" focus="{{ focus }}" autoFocus="{{ focus }}" bindconfirm="handleSearchRecipe" bindcancel="handleClearSearch"></searchBar>
   </view>
   <view wx:if="classifyList.length > 0" class="classify-list">
     <view class="classify-item" wx:for="{{ classifyList }}" wx:key="index" wx:item="item" data-classid="{{ item.classid }}" bindtap="handleViewClassify">

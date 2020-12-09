@@ -1,0 +1,117 @@
+.detail-container {
+  .detail-img {
+    margin-bottom: 20rpx;
+    width: 100%;
+    height: 350rpx;
+  }
+  .detail-content {
+    padding: 30rpx;
+    .content {
+      text-indent: 2em;
+      font-size: 24rpx;
+      line-height: 36rpx;
+      color: #666;
+    }
+    .name {
+      position: relative;
+      margin: 20rpx 0px 5rpx;
+      text-align: center;
+      font-size: 32rpx;
+      font-weight: bold;
+      color: #222;
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 20rpx;
+        width: 200rpx;
+        height: 1rpx;
+        background-color: #fa6571;
+      }
+      &::before {
+        left: 20rpx;
+      }
+      &::after {
+        right: 40rpx;
+      }
+    }
+    .detail-info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10rpx 20rpx;
+      font-size: 24rpx;
+      color: #666;
+    }
+    .sub-title {
+      position: relative;
+      font-size: 32rpx;
+      font-weight: bold;
+      text-align: center;
+      padding: 40rpx 0rpx 15rpx;
+      margin-bottom: 40rpx;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0rpx;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40rpx;
+        height: 6rpx;
+        border-radius: 10px;
+        background-color: #ffc44f;
+      }
+    }
+    // 食材
+    .material {
+      .material-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 560rpx;
+        font-size: 26rpx;
+        color: #666;
+        .icon-gou {
+          color: #ffc44f;
+          font-size: 50rpx;
+          flex-basis: 100rpx;
+        }
+        .mname, .amount {
+          flex: 1;
+          text-align: center;
+        }
+      }
+    }
+    // 步骤
+    .process {
+      .process-item {
+        margin: 0 auto;
+        width: 640rpx;
+        margin-bottom: 20rpx;
+        .process-img {
+          position: relative;
+          image {
+            width: 640rpx;
+            height: 400rpx;
+            border-radius: 10rpx;
+          }
+          .process-index {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 50rpx;
+            height: 50rpx;
+            line-height: 50rpx;
+            text-align: center;
+            border-radius: 10rpx 0rpx 10rpx 0rpx;
+            color: #fff;
+            background-color: #ffc44f;
+          }
+        }
+      }
+    }
+  }
+}

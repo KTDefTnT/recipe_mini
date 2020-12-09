@@ -15,11 +15,12 @@ Page({
     console.log(respData)
   },
   handleClearSearch () {
+    console.log('handleClearSearch');
     this.setData({
       classifyList: []
     });
-    wx.switchTab({
-      url: '/pages/home/index',
-    })
+    // wx.switchTab({
+    //   url: '/pages/home/index',
+    // });
   }
 });

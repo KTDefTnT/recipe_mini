@@ -1,0 +1,93 @@
+.detail-container .detail-img {
+  margin-bottom: 20rpx;
+  width: 100%;
+  height: 350rpx; }
+
+.detail-container .detail-content {
+  padding: 30rpx; }
+  .detail-container .detail-content .content {
+    text-indent: 2em;
+    font-size: 24rpx;
+    line-height: 36rpx;
+    color: #666; }
+  .detail-container .detail-content .name {
+    position: relative;
+    margin: 20rpx 0px 5rpx;
+    text-align: center;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #222; }
+    .detail-container .detail-content .name::before, .detail-container .detail-content .name::after {
+      content: '';
+      position: absolute;
+      top: 20rpx;
+      width: 200rpx;
+      height: 1rpx;
+      background-color: #fa6571; }
+    .detail-container .detail-content .name::before {
+      left: 20rpx; }
+    .detail-container .detail-content .name::after {
+      right: 40rpx; }
+  .detail-container .detail-content .detail-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10rpx 20rpx;
+    font-size: 24rpx;
+    color: #666; }
+  .detail-container .detail-content .sub-title {
+    position: relative;
+    font-size: 32rpx;
+    font-weight: bold;
+    text-align: center;
+    padding: 40rpx 0rpx 15rpx;
+    margin-bottom: 40rpx; }
+    .detail-container .detail-content .sub-title::before {
+      content: '';
+      position: absolute;
+      bottom: 0rpx;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40rpx;
+      height: 6rpx;
+      border-radius: 10px;
+      background-color: #ffc44f; }
+  .detail-container .detail-content .material .material-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 560rpx;
+    font-size: 26rpx;
+    color: #666; }
+    .detail-container .detail-content .material .material-item .icon-gou {
+      color: #ffc44f;
+      font-size: 50rpx;
+      flex-basis: 100rpx; }
+    .detail-container .detail-content .material .material-item .mname, .detail-container .detail-content .material .material-item .amount {
+      flex: 1;
+      text-align: center; }
+  .detail-container .detail-content .process .process-item {
+    margin: 0 auto;
+    width: 640rpx;
+    margin-bottom: 20rpx; }
+    .detail-container .detail-content .process .process-item .process-img {
+      position: relative; }
+      .detail-container .detail-content .process .process-item .process-img image {
+        width: 640rpx;
+        height: 400rpx;
+        border-radius: 10rpx; }
+      .detail-container .detail-content .process .process-item .process-img .process-index {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 50rpx;
+        height: 50rpx;
+        line-height: 50rpx;
+        text-align: center;
+        border-radius: 10rpx 0rpx 10rpx 0rpx;
+        color: #fff;
+        background-color: #ffc44f; }

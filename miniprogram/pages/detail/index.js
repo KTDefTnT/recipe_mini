@@ -1,18 +1,26 @@
 // miniprogram/pages/detail/index.js.js
+import recipeAPI from '../../core/api/recipe.api';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    detailInfo: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: async function (options) {
+    const respData = await recipeAPI.getDetailByClassid(8);
+    console.log('respData', respData);
+    if (respData.code === '10000') {
+      this.setData({
+        detailInfo: respData.result.result
+      });
+    }
+    
   },
 
   /**
