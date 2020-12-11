@@ -10,30 +10,39 @@
     font-size: 24rpx;
     line-height: 36rpx;
     color: #666; }
-  .detail-container .detail-content .name {
-    position: relative;
-    margin: 20rpx 0px 5rpx;
-    text-align: center;
-    font-size: 32rpx;
-    font-weight: bold;
-    color: #222; }
-    .detail-container .detail-content .name::before, .detail-container .detail-content .name::after {
-      content: '';
-      position: absolute;
-      top: 20rpx;
-      width: 200rpx;
+  .detail-container .detail-content .name-container {
+    display: flex;
+    margin: 20rpx 0px 5rpx; }
+    .detail-container .detail-content .name-container .line-style {
+      position: relative;
+      width: 160rpx;
       height: 1rpx;
+      margin-top: 20rpx;
       background-color: #fa6571; }
-    .detail-container .detail-content .name::before {
-      left: 20rpx; }
-    .detail-container .detail-content .name::after {
-      right: 40rpx; }
+      .detail-container .detail-content .name-container .line-style:last-child::before {
+        left: -50rpx; }
+      .detail-container .detail-content .name-container .line-style::before {
+        content: '';
+        position: absolute;
+        top: -10rpx;
+        right: -50rpx;
+        width: 20rpx;
+        height: 20rpx;
+        background-color: #fa6571;
+        transform: rotate(45deg); }
+    .detail-container .detail-content .name-container .name {
+      flex: 1;
+      position: relative;
+      text-align: center;
+      font-size: 32rpx;
+      font-weight: bold;
+      color: #222; }
   .detail-container .detail-content .detail-info {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 10rpx 20rpx;
+    padding: 10rpx 0rpx;
     font-size: 24rpx;
     color: #666; }
   .detail-container .detail-content .sub-title {
@@ -66,6 +75,8 @@
       color: #ffc44f;
       font-size: 50rpx;
       flex-basis: 100rpx; }
+      .detail-container .detail-content .material .material-item .icon-gou.red {
+        color: #fa6571; }
     .detail-container .detail-content .material .material-item .mname, .detail-container .detail-content .material .material-item .amount {
       flex: 1;
       text-align: center; }

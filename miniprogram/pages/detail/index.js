@@ -8,67 +8,32 @@ Page({
   data: {
     detailInfo: {}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: async function (options) {
-    const respData = await recipeAPI.getDetailByClassid(8);
-    console.log('respData', respData);
+  async getDetailByKeyword (keyword) {
+    const respData = await recipeAPI.search({ keyword, num:1  });
+    console.log('getDetailByKeyword', respData);
+    if (respData.code === '10000') {
+      this.setData({
+        detailInfo: respData.result.result.list.length > 0 ? respData.result.result.list[0] : {}
+      });
+    }
+  },
+  async getDetailByClassid (id) {
+    const respData = await recipeAPI.getDetailByClassid(id);
     if (respData.code === '10000') {
       this.setData({
         detailInfo: respData.result.result
       });
     }
-    
   },
-
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 生命周期函数--监听页面加载
    */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onLoad: function (options) {
+    console.log('options', options);
+    if (options.name) {
+      this.getDetailByKeyword(options.name);
+    } else {
+      this.getDetailByClassid(options.id)
+    }
   }
 })

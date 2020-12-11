@@ -12,26 +12,38 @@
       line-height: 36rpx;
       color: #666;
     }
-    .name {
-      position: relative;
+    .name-container {
+      display: flex;
       margin: 20rpx 0px 5rpx;
-      text-align: center;
-      font-size: 32rpx;
-      font-weight: bold;
-      color: #222;
-      &::before, &::after {
-        content: '';
-        position: absolute;
-        top: 20rpx;
-        width: 200rpx;
+      .line-style {
+        position: relative;
+        width: 160rpx;
         height: 1rpx;
+        margin-top: 20rpx;
         background-color: #fa6571;
+        &:last-child {
+          &::before{
+            left: -50rpx;
+          }
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: -10rpx;
+          right: -50rpx;
+          width: 20rpx;
+          height: 20rpx;
+          background-color: #fa6571;
+          transform: rotate(45deg);
+        }
       }
-      &::before {
-        left: 20rpx;
-      }
-      &::after {
-        right: 40rpx;
+      .name {
+        flex: 1;
+        position: relative;
+        text-align: center;
+        font-size: 32rpx;
+        font-weight: bold;
+        color: #222;
       }
     }
     .detail-info {
@@ -39,7 +51,7 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      padding: 10rpx 20rpx;
+      padding: 10rpx 0rpx;
       font-size: 24rpx;
       color: #666;
     }
@@ -77,6 +89,9 @@
           color: #ffc44f;
           font-size: 50rpx;
           flex-basis: 100rpx;
+          &.red {
+            color: #fa6571;
+          }
         }
         .mname, .amount {
           flex: 1;

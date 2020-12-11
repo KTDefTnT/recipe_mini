@@ -24,6 +24,7 @@ export default {
       return resp.data;
     }); 
   },
+  // 扫码识别
   findFood: (data) => {
     return http.get('/JDAI/FoodApi', data).then(resp => {
       return resp.data;

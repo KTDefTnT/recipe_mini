@@ -45,7 +45,7 @@
 }
 .collect-item__icon {
   font-size: 44rpx;
-  color: #ffc44f;
+  color: #fa6571;
 }
 .collect-item__text {
   font-size: 32rpx;

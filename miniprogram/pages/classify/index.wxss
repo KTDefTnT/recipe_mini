@@ -1,1 +1,91 @@
-/* miniprogram/pages/classify/index.wxss */
+@charset "UTF-8";
+.classify-container .classify-list {
+  line-height: 50rpx;
+  white-space: nowrap; }
+
+.classify-container .classify-item {
+  display: inline-block;
+  padding: 0rpx 20rpx;
+  width: auto;
+  color: #222; }
+  .classify-container .classify-item.selected {
+    background: #ffc44f;
+    color: #fff;
+    border-radius: 10rpx; }
+
+.classify-container .list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30rpx 30rpx 0rpx 30rpx; }
+  .classify-container .list-container .list-card {
+    box-sizing: border-box;
+    width: calc(50% - 10rpx);
+    margin-bottom: 20rpx;
+    padding-bottom: 20rpx;
+    box-shadow: 0px 0px 2px 1px #ffc44f;
+    border-radius: 10rpx; }
+    .classify-container .list-container .list-card:nth-child(odd) {
+      margin-right: 10rpx; }
+    .classify-container .list-container .list-card .card-img {
+      width: 100%;
+      height: 200rpx; }
+    .classify-container .list-container .list-card .card-name {
+      text-align: center;
+      color: #222;
+      font-size: 32rpx;
+      line-height: 36rpx;
+      font-weight: bold; }
+    .classify-container .list-container .list-card .card-time {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10rpx 20rpx;
+      font-size: 24rpx;
+      color: #888; }
+    .classify-container .list-container .list-card .tag {
+      display: -webkit-box;
+      /** 对象作为伸缩盒子模型显示 **/
+      padding: 0rpx 20rpx;
+      word-break: break-all;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+      -webkit-line-clamp: 2;
+      /** 显示的行数 **/
+      overflow: hidden;
+      /** 隐藏超出的内容 **/
+      font-size: 24rpx;
+      color: #666; }
+
+.classify-container .empty {
+  text-align: center;
+  font-size: 32rpx;
+  color: #222; }
+  .classify-container .empty .icon-empty {
+    margin-top: 100rpx;
+    margin-bottom: 20rpx;
+    margin-bottom: 20rpx;
+    font-size: 260rpx;
+    color: #fa6571; }
+
+.classify-container .no-more {
+  position: relative;
+  text-align: center;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 20rpx; }
+  .classify-container .no-more::before, .classify-container .no-more::after {
+    content: '';
+    position: absolute;
+    top: 14rpx;
+    width: 200rpx;
+    height: 2rpx;
+    background-color: #fa6571; }
+  .classify-container .no-more::before {
+    left: 50rpx; }
+  .classify-container .no-more::after {
+    right: 50rpx; }

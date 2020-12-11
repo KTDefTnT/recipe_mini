@@ -1,12 +1,11 @@
 {
   "pages": [
-    "pages/detail/index",
     "pages/home/index",
     "pages/classify/index",
-    "pages/mine/index",
     "pages/collect/index",
+    "pages/detail/index",
+    "pages/mine/index",
     "pages/search/index"
-    
   ],
   "tabBar": {
     "color": "#7A7E83",

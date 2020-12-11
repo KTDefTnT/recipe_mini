@@ -1,8 +1,26 @@
 <!--miniprogram/pages/classify/index.wxml-->
 <view class="classify-container">
-  <view class="classify-list">
-    <view class="classify-item" wx:for="{{ classifyList }}" wx:key="index" wx:item="item" data-classid="{{ item.classid }}" bindtap="handleViewClassify">
+  <scroll-view class="classify-list" scroll-x="true" style="height: 60rpx;">
+    <view class="{{ selectedId === item.classid ? 'selected classify-item' : 'classify-item' }}" wx:for="{{ classifyList }}" wx:key="index" wx:item="item" data-classid="{{ item.classid }}" bindtap="handleViewClassify">
       {{ item.name }}
     </view>
+  </scroll-view>
+  <view class="list-container">
+    <view class="list-card" wx:for="{{ listData }}" wx:item="item" wx:key="index">
+      <image class="card-img" src="{{ item.pic }}"></image>
+      <view class="card-name">{{ item.name }}</view>
+      <view class="card-time">
+        <view class="time">时长:{{ item.cookingtime }}</view>
+        <view class="time">人数:{{ item.peoplenum }}</view>
+      </view>
+      <view class="tag">
+        功效： {{ item.tag }}
+      </view>
+    </view>
   </view>
+  <view class="empty" wx:if="{{ listData.length === 0 }}">
+    <view class="iconfont icon-empty"></view>
+    <view>暂无数据啦~</view>
+  </view>
+  <view class="no-more" wx:if="{{ noMore }}">我也是有底线的</view>
 </view>
