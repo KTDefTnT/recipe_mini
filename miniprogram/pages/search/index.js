@@ -2,25 +2,43 @@ import recipeAPI from '../../core/api/recipe.api';
 Page({
   data: {
     classifyList: [],
-    focus: true
+    focus: true,
+    searchValue: ''
   },
-  async handleSearchRecipe (event) {
-    let keyword = event.detail.value;
+  async getClassifyList (keyword) {
     let respData = await recipeAPI.search({ keyword, num: 20, start: 20 });
     if (respData.code === '10000') {
       this.setData({
         classifyList: respData.result.result.list
       });
     }
-    console.log(respData)
+  },
+  handleSearchRecipe (event) {
+    let keyword = event.detail.value;
+    this.getClassifyList(keyword);
+  },
+  handleViewClassify (event) {
+    console.log('event',event);
+    let id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/detail/index?id=${id}`,
+    });
   },
   handleClearSearch () {
-    console.log('handleClearSearch');
     this.setData({
       classifyList: []
     });
-    // wx.switchTab({
-    //   url: '/pages/home/index',
-    // });
+    wx.switchTab({
+      url: '/pages/home/index',
+    });
+  },
+  onLoad (options) {
+    console.log('options', options);
+    if (options.name) {
+      this.setData({
+        searchValue: options.name
+      });
+      this.getClassifyList(options.name);
+    }
   }
 });

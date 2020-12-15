@@ -21,7 +21,7 @@
       .classify-item__tag {
         display: -webkit-box;
         padding: 5rpx 0rpx;
-        font-size: 24rpx;
+        font-size: 28rpx;
         overflow : hidden;
         text-overflow: ellipsis;
         -webkit-line-clamp: 2;
@@ -31,7 +31,7 @@
         display: flex;
         justify-content: space-between;
         padding: 2rpx 0rpx;
-        font-size: 20rpx;
+        font-size: 24rpx;
         color: #222;
         .classify-item__time, .classify-item__people {
           flex: 1;

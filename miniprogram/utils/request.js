@@ -9,7 +9,7 @@ const service =  function (method, url, params) {
       success: resp => {
         if (resp.data.code !== '10000') {
           console.log('request', resp.code);
-          uni.showToast({
+          wx.showToast({
             title: resp.data.msg
             // image: '../static/error.png'
           });
@@ -17,6 +17,9 @@ const service =  function (method, url, params) {
         reslove(resp);
       },
       fail: error => {
+        wx.showToast({
+          title: '请求失败'
+        });
         resolve(error)
       }
     });

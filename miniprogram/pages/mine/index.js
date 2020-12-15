@@ -35,7 +35,6 @@ Page({
     const userResp = await wx.getStorage({
       key: 'userInfo',
     });
-    console.log('userInfo', userResp);
     if (loginResp.data) {
       this.setData({
         isLogin: loginResp.data,

@@ -13,6 +13,11 @@ Component({
     value: {
       type: String,
       value: '',
+      observer(newVal) {
+        if (this.data.controlled) {
+          this.updated(newVal)
+        }
+      }
     },
     placeholderStyle: {
       type: [String, Object],
@@ -69,6 +74,10 @@ Component({
     cancelText: {
       type: String,
       value: '取消'
+    },
+    controlled: {
+      type: Boolean,
+      value: false,
     }
   },
 
@@ -122,6 +131,19 @@ Component({
         inputFocus: true
       });
       this.triggerEvent('clear', { value: '' });
+    },
+    updated(inputValue) {
+      if (this.data.inputValue !== inputValue) {
+        this.setData({
+          inputValue
+        });
+      }
     }
+  },
+  attached() {
+    const { defaultValue, value, controlled } = this.data
+    const inputValue = controlled ? value : defaultValue
+
+    this.updated(inputValue)
   }
 })

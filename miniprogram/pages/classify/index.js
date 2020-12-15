@@ -26,7 +26,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: async function () {
+    wx.showLoading({
+      title: '数据加载中...',
+    });
     let resp = await recipeAPI.getRecipeClassify();
+    wx.hideLoading();
     if (resp.result.msg === 'ok') {
       let classifyList = resp.result.result.slice(1);
       let selectedId = classifyList[0].classid;

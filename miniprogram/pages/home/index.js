@@ -47,30 +47,35 @@ Page({
       },
       success: respData => {
         const resultList = respData.data.result;
-        console.log('resultList', respData);
         let sureItem = resultList.filter(item => Number(item.probability) > 0.7);
         // 若存在百分之六十命中则直接跳转
         if (sureItem.length > 0) {
           wx.navigateTo({
-            url: `/pages/detail/index?name=${sureItem[0].name}`,
+            url: `/pages/search/index?name=${sureItem[0].name}`,
           });
         } else {
           // 若不存在则用户自动选择
-          let actionList = resultList.map(item => `名称：${item.name}  概率：${(Number(item.probability)*100).toFixed(2)}%`);
+          let actionList = resultList.map(item => `${item.name}  概率：${(Number(item.probability)*100).toFixed(2)}%`);
           wx.showActionSheet({
             itemList: actionList,
             success: selectItem => {
               wx.navigateTo({
-                url: `/pages/detail/index?name=${resultList[0].name}`,
+                url: `/pages/search/index?name=${resultList[0].name}`,
               });
             }
           });
         }
+      },
+      fail: error => {
+        wx.showToast({
+          title: error,
+          icon: 'success',
+          duration: 2000
+        })
       }
     });
   },
   handleFocus () {
-    console.log('bindFocus');
     wx.navigateTo({
       url: '/pages/search/index',
     });

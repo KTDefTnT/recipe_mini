@@ -10,7 +10,6 @@ Page({
   },
   async getDetailByKeyword (keyword) {
     const respData = await recipeAPI.search({ keyword, num:1  });
-    console.log('getDetailByKeyword', respData);
     if (respData.code === '10000') {
       this.setData({
         detailInfo: respData.result.result.list.length > 0 ? respData.result.result.list[0] : {}
@@ -29,7 +28,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('options', options);
+    console.log('detailoptions', options);
     if (options.name) {
       this.getDetailByKeyword(options.name);
     } else {
