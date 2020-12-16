@@ -6,7 +6,6 @@ Page({
   },
   // 获取用户信息
   async getUserInfo (data) {
-    console.log('userAPI', userAPI.addUser);
     if (data.detail.errMsg === 'getUserInfo:ok') {
       console.log('data', data);
       let registerInfo = await userAPI.isRegister();
@@ -14,8 +13,13 @@ Page({
         const userInfo = data.detail.userInfo;
         userAPI.addUser(userInfo);
       }
+      this.setData({
+        isLogin: true,
+        userInfo: data.detail.userInfo
+      });
     }
   },
+  // 判断是否已授权登录
   handleCheck () {
     wx.cloud.callFunction({
       name: 'user_isRegister'
@@ -27,6 +31,11 @@ Page({
       }
       console.log('resp', resp);
     });
+  },
+  // 联系客服
+  handleContact (e) {
+    console.log('联系客服', e.detail.path);
+    console.log('联系客服', e.detail.query);
   },
   async onLoad () {
     const loginResp =  await wx.getStorage({

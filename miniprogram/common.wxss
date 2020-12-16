@@ -1,0 +1,13 @@
+/* 空 */
+.empty {
+  text-align: center;
+  font-size: 32rpx;
+  color: #222;
+}
+.empty .icon-empty {
+  margin-top: 100rpx;
+  margin-bottom: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 260rpx;
+  color: #fa6571;
+}

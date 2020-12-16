@@ -7,7 +7,7 @@ Page({
   },
   async getClassifyList (keyword) {
     let respData = await recipeAPI.search({ keyword, num: 20, start: 20 });
-    if (respData.code === '10000') {
+    if (respData.code === '10000' && respData.result.status === 0) {
       this.setData({
         classifyList: respData.result.result.list
       });

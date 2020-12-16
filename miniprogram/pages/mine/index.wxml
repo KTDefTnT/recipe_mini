@@ -33,7 +33,7 @@
         </view>
       </view>
     </view>
-    
+    <button type="primary" open-type="contact" bindcontact="handleContact">联系客服</button>
   </view>
   <view wx:else>
     <button type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>

@@ -6,7 +6,7 @@
     </view>
   </scroll-view>
   <view class="list-container">
-    <view class="list-card" wx:for="{{ listData }}" wx:item="item" wx:key="index">
+    <view class="list-card" wx:for="{{ listData }}" wx:item="item" wx:key="index" bindtap="handleViewDetil" data-id="{{ item.id }}">
       <image class="card-img" src="{{ item.pic }}"></image>
       <view class="card-name">{{ item.name }}</view>
       <view class="card-time">

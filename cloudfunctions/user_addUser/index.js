@@ -29,7 +29,8 @@ exports.main = async (event, context) => {
         nickName: event.nickName,
         province: event.province,
         appId: event.userInfo.appId,
-        openId: event.userInfo.openId
+        openId: event.userInfo.openId,
+        createTime: db.serverDate()
       }
     });
     return {

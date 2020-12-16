@@ -27,12 +27,16 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
     console.log('detailoptions', options);
+    wx.showLoading({
+      title: '详情加载中',
+    })
     if (options.name) {
-      this.getDetailByKeyword(options.name);
+      await this.getDetailByKeyword(options.name);
     } else {
-      this.getDetailByClassid(options.id)
+      await this.getDetailByClassid(options.id)
     }
+    wx.hideLoading();
   }
 })

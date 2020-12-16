@@ -12,6 +12,14 @@ Page({
     start: 0,
     noMore: false
   },
+  // 详情
+  handleViewDetil (event) {
+    let id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/detail/index?id=${id}`,
+    });
+  },
+  // 分类
   handleViewClassify (data) {
     let classid = data.target.dataset.classid;
     this.setData({

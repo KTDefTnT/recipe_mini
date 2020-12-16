@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/mine/index",
     "pages/home/index",
     "pages/classify/index",
     "pages/collect/index",
     "pages/detail/index",
-    "pages/mine/index",
+    
     "pages/search/index"
   ],
   "tabBar": {

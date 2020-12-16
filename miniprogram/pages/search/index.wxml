@@ -15,4 +15,8 @@
       </view>
     </view>
   </view>
+  <view class="empty" wx:if="{{ classifyList.length === 0 }}">
+    <view class="iconfont icon-empty"></view>
+    <view>暂无数据啦~</view>
+  </view>
 </view>
