@@ -11,6 +11,31 @@ Page({
   onLoad: function () {
     this.getAccessToken();
   },
+  // 操作数据库
+  async handlePractice () {
+    await wx.cloud.callFunction({
+      name: 'database_practice'
+    });
+  },
+  async onLoad () {
+    const db = wx.cloud.database();
+    const selectData = await db.collection('collection').where({
+      openId: 'oQ48T0e4i82bL0MlzrUqbuueD-ws', // 填入当前用户 openid
+      collectId: '20'
+    }).get();
+    console.log(selectData);
+    const respData = db.collection('collection').where({
+      openId: 'oQ48T0e4i82bL0MlzrUqbuueD-ws', // 填入当前用户 openid
+      collectId: '20'
+    }).watch({
+      onChange: function(snapshot) {
+        console.log('snapshot', snapshot)
+      },
+      onError: function(err) {
+        console.error('the watch closed because of error', err)
+      }
+    });
+  },
   async getAccessToken () {
     const respData = await wx.cloud.callFunction({
       name: 'get_baidu_token'

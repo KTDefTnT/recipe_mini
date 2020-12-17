@@ -9,7 +9,7 @@
       <image class="tab-item__img" src="../../images/recipe_search.png"></image>
       <view class="tab-item__title">扫图识菜</view>
     </view>
-    <view class="tab-item">
+    <view class="tab-item" bindtap="handlePractice">
       <image class="tab-item__img" src="../../images/recipe_search.png"></image>
       <view class="tab-item__title">早餐</view>
     </view>
