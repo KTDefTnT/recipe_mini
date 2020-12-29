@@ -1,10 +1,12 @@
 {
   "pages": [
+    "pages/collect/index",
+    "pages/classify/index",
     "pages/home/index",
     "pages/mine/index",
     
-    "pages/classify/index",
-    "pages/collect/index",
+    
+    
     "pages/detail/index",
     
     "pages/search/index"

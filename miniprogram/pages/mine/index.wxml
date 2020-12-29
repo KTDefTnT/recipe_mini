@@ -10,9 +10,9 @@
           <view class="collect-item__icon iconfont icon-like"></view>
           <view class="collect-item__text">点赞</view>
         </view>
-        <view class="collect-item">
+        <view class="collect-item" bindtap="handleViewCollect">
           <view class="collect-item__icon iconfont icon-collect"></view>
-          <view class="collet-item__text">收藏</view>
+          <view class="collet-item__text">我的收藏</view>
         </view>
       </view>
       <view class="mine-list">

@@ -42,6 +42,7 @@
   "scripts": {
     "beforeCompile": ""
   },
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {
       "list": []

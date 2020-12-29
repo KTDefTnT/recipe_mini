@@ -37,6 +37,12 @@ Page({
     console.log('联系客服', e.detail.path);
     console.log('联系客服', e.detail.query);
   },
+  // 查看收藏
+  handleViewCollect () {
+    wx.switchTab({
+      url: '/pages/collect/index',
+    })
+  },
   async onLoad () {
     const loginResp =  await wx.getStorage({
       key: 'isLogin',

@@ -1,6 +1,8 @@
 <view class="detail-container">
   <image class="detail-img" src="{{ detailInfo.pic }}"></image>
   <view class="detail-content">
+    <image wx:if="{{ collected }}" class="collect-img" src="../../images/collect_selected.png" data-collected="{{ false }}" bindtap="handleCollect"></image>
+    <image wx:else class="collect-img" src="../../images/collect.png" data-collected="{{ true }}" bindtap="handleCollect"></image>
     <rich-text class="content" nodes="{{detailInfo.content}}"></rich-text>
     <view class="name-container">
       <view class="line-style"/>

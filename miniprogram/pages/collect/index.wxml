@@ -1,2 +1,23 @@
 <!--miniprogram/pages/collect/index.wxml-->
-<text>miniprogram/pages/collect/index.wxml</text>
+<view class="collect-contianer">
+  <view wx:if="collectList.length > 0" class="classify-list">
+    <view class="classify-item" wx:for="{{ collectList }}" wx:key="index" wx:item="item" data-id="{{ item.collectid }}" bindtap="handleViewClassify">
+      <image class="classify-item__img" src="{{ item.pic }}"></image>
+      <view class="classify-item__content">
+        <view class="classify-item__name">{{ item.name }}</view>
+        <view class="classify-item__tag">功效：{{ item.tag }}</view>
+        <view class="lassify-item__desc">
+          <view class="classify-item__time"><text>烹饪时长：</text> {{ item.cookingtime }}</view>
+          <view class="classify-item__people"><text>用餐人数：</text> {{ item.peoplenum }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="empty" wx:if="{{ collectList.length === 0 }}">
+    <view class="iconfont icon-empty"></view>
+    <view>暂无数据啦~</view>
+  </view>
+  <view class="no-more" wx:if="{{ collectList.length > 0 && total === collectList.length }}">
+    我也是有底线的
+  </view>
+</view>
